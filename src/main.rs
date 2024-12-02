@@ -36,7 +36,6 @@ async fn main() -> anyhow::Result<()> {
     )?);
 
     let serve_future = make_service_fn(move |socket: &AddrStream| {
-        log::info!("listening on http://{}", addr);
         let rpc = rpc.clone();
         let addr = socket.remote_addr();
         async move {
@@ -48,6 +47,7 @@ async fn main() -> anyhow::Result<()> {
     });
 
     // launch server
+    log::info!("listening on http://{}", addr);
     let server = Server::bind(addr).serve(serve_future);
     if let Err(err) = server.await {
         log::error!("server error: {}", err);

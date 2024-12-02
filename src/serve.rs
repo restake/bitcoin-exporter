@@ -150,7 +150,7 @@ pub(crate) async fn serve_req(
     rpc: Arc<Client>,
 ) -> ClientResult<Response<Body>> {
     if req.method() != Method::GET || req.uri().path() != "/metrics" {
-        log::warn!("  [{}] {} {}", addr, req.method(), req.uri().path());
+        log::debug!("  [{}] {} {}", addr, req.method(), req.uri().path());
         return Ok(Response::builder()
             .status(404)
             .body(Body::default())
