@@ -5,23 +5,17 @@ version = "0.5.4"
 edition = "2021"
 
 [dependencies]
-anyhow = "1.0.51"
-argh = "0.1.7"
-bitcoincore-rpc = "0.14.0"
-bitcoincore-rpc-json = "0.14.0"
-lazy_static = "1.4.0"
-prometheus = "0.13.0"
+anyhow = "1.0.93"
+argh = "0.1.12"
+bitcoincore-rpc = "0.19.0"
+bitcoincore-rpc-json = "0.19.0"
+lazy_static = "1.5.0"
+prometheus = "0.13.4"
 hyper = { version = "^0.14", features = ["server", "http1", "tcp"] }
-tokio = { version = "^1.0", features = ["macros", "rt-multi-thread"] }
-env_logger = "0.9.0"
-log = "0.4.14"
-bitcoin = "0.27.1"
+tokio = { version = "1.41.1", features = ["macros", "rt-multi-thread"] }
+env_logger = "0.11.5"
+log = "0.4.22"
+bitcoin = "0.32.5"
 serde = "1.0.132"
-serde_yaml = "0.8.23"
+serde_yaml = "0.9.34"
 thiserror = "1.0.30"
-
-[patch.crates-io]
-bitcoincore-rpc = { git = "https://github.com/eburghar/rust-bitcoincore-rpc.git", branch = "master" }
-bitcoincore-rpc-json = { git = "https://github.com/eburghar/rust-bitcoincore-rpc.git", branch = "master" }
-# bitcoincore-rpc = { path = "../bitcoincore-rpc/client" }
-# bitcoincore-rpc-json = { path = "../bitcoincore-rpc/json" }
